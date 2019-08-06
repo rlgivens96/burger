@@ -4,5 +4,21 @@ body {
 }
 
 .pageBody {
-    
+    max-width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 95%;
+    padding: 1%;
+    margin: 1%;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.burgerImg {
+    width: 30px;
 }
