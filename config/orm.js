@@ -64,8 +64,9 @@ var orm = {
             if(err) {
                 throw err;
             }
-            cb()
-        })
-        
+            cb(result);
+        });
     }
-}
+};
+
+module.exports = orm;

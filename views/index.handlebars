@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burgers Yummy</title>
+</head>
+
+<body>
+    <div class="pageBody">
+        <div class="header">
+            <img class="burgerImg" src="../public/assets/img/burger.jpg">
+            <h1>Burgers!</h1>
+            <h2>Now Available To Devour</h2>
+            <img class="burgerImg" src="../public/assets/img/burger.jpg">
+
+            <ul>
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <div class="bBox">
+                    <img class="burgerImg" src="../public/assets/img/burger.jpg">
+                    {{burger name}}
+                    <button class="devourNodevour devour" data-id="{{id}}" data-devour="{{devoured}}">Devour!</button>
+                    <button class="deleteBurger" data-id="{{this.id}}">Delete!</button>
+
+                </div>
+                {{/unless}}
+                {{/each}}
+                <div class="sideBS">
+                    <h2 class="caption">Devoured:</h2>
+                    <hr>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <div class="bBox">
+                        <img class="burgerImg" src="../public/assets/img/burger.jpg">
+                        {{burger name}}
+                        <button class="devourNodevour nodevour" data-id="{{id}}" data-devour="{{devoured}}">Not Devour!</button>
+                        <button class="deleteBurger" data-id="{{this.id}}">Delete!</button>
+                    </div>
+                </div>
+                <li>
+                    {{this.id}}
+                    {{this.burger_name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="addBurger">
+        <h2>Add a Burger</h2>
+        <hr>
+        <form class="burger-form">
+
+            <div class="form-group">
+                <label for="burger_name">Burger Name:</label><br>
+                <input type="text" id="burger_name" name="burger_name">
+                <br>
+                <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+                <input type="radio" name="devoured" value="0"> Not Devoured!
+            </div>
+
+            <button id="burgerButton" type="submit">Add Burger</button>
+        </form>
+    </div>
+</body>
+
+</html>
